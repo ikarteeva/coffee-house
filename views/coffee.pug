@@ -1,0 +1,17 @@
+include header
+
+div(class='wrap')
+    div(class='content')
+        header(class='site-header')
+            include site_header
+        
+
+        div(class='container')
+            h2 Товары 
+            div(class='row')
+                each val, index in goods 
+                    include card
+            p Этот раздел программы содержит информацию о товарах кофейни "ПРОСТО Кофе"
+        include nav
+    include footer
+    

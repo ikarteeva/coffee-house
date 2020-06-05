@@ -1,0 +1,44 @@
+include header.pug
+
+div(class='wrap')
+  div(class='content')
+    header(class='site-header')
+      include site_header_order.pug
+
+    div(class='container')
+      div(class='row')
+        div(class='col col-md-12')
+          h3(class="cart-header") Cart
+          div(id='cart-nav')
+        div(class='col col-md-12')
+          h3 Создание заказа 
+        div(class='col col-md-6')
+          form#coffee-order(action="")
+                  div(class='form-control')
+                    label(for='ident') Введите id клиента
+                    input(
+                        type='text',
+                        id='ident',
+                        placeholder='Введите id клиента',
+                        )
+                  div(class='form-control')
+                    label(for='email') Email
+                    input(
+                        type='text',
+                        id='email',
+                        placeholder='mail@example.com',
+                        )
+                  div(class='form-control')
+                    label(for='rule') 
+                      input(
+                          type='checkbox',
+                          id='rule',
+                          value='1'
+                          ) 
+                      span  Оплата картой
+                  div(class='form-control text-right')
+                    button(class='button-primary', type='submit') Завершение заказа
+  include footer.pug
+
+  script(src='js/order.js')
+

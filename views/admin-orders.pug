@@ -1,0 +1,28 @@
+h1 Admin-panel
+h2 Информация о заказах
+table
+ tr
+  th id
+  th Дата
+  th id Клиента
+  th id Товара
+  th Цена
+  th Количество товара
+  th Итого
+  th Клиент
+  th Телефон
+  th E-mail
+  th Номер карты
+ each val, index in orders
+  tr 
+   td #{val['id']}
+   td #{val['date']}
+   td #{val['clientid']}
+   td #{val['goodsid']}
+   td #{val['sum'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} рублей
+   td #{val['goodsamount']}
+   td #{val['total'].toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} рублей
+   td #{val['fullname']}
+   td #{val['phone']}
+   td #{val['email']}
+   td #{val['cardnumber']}

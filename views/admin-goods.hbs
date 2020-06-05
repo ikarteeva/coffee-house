@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список товаров</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Список товаров</h1>
+    <p><a href="/createg">Добавить товар</a></p>
+    <table>
+        <tr><th>Название</th><th>Описание</th><th>Изображение</th><th>Стоимость</th></tr>
+        {{#each goods}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.meaning}}</td>
+                <td>{{this.image}}</td>
+                <td>{{this.cost}}</td>
+                <td>
+                    <a href="/editg/{{this.id}}">Редактировать</a>|
+                    <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</body>
+<html>
