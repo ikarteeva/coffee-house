@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список клиентов</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Список клиентов</h1>
+    <p><a href="/createc">Добавить клиента</a></p>
+    <table>
+        <tr><th>Id</th><th>Имя</th><th>Email</th><th>Номер телефона</th><th>Номер карты</th></tr>
+        {{#each clients}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.fullname}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.phonenumber}}</td>
+                <td>{{this.cardnumber}}</td>
+                <td>
+                    <a href="/editc/{{this.id}}">Редактировать</a>|
+                    <form action="delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+    </table>
+</body>
+<html>
